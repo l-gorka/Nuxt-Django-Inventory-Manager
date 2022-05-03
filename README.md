@@ -28,8 +28,6 @@ written in Vue/Nuxt.
 Because the project is deployed to the Heroku free service, the initial request may take up to 30 seconds.
 
 <a name="screenshots"></a>
-# Screenshots:
+# Screenshot:
 ![Index screenshot](https://res.cloudinary.com/dgmcox/image/upload/v1651614334/pens/Pen-stash_xcot8g.png)
-![Index mobile](https://res.cloudinary.com/dgmcox/image/upload/v1651614334/pens/Pen-stash-mobile_gfrsio.png)
-![Registration mobile](https://res.cloudinary.com/dgmcox/image/upload/v1651614333/pens/Pen-stash-register_yeycxn.png)
 
