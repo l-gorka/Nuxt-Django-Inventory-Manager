@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_NAME=YOUR_DATA_HERE
+      - POSTGRES_USER=YOUR_DATA_HERE
+      - POSTGRES_PASSWORD=YOUR_DATA_HERE
+  backend:
+    build: backend/.
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - type: bind
+        source: ./backend/
+        target: /app/backend/
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SECRET_KEY=YOUR_DATA_HERE
+      - CLOUDINARY_SECRET=YOUR_DATA_HERE
+      - CLOUDINARY_CLOUD_NAME=YOUR_DATA_HERE
+      - CLOUDINARY_API_KEY=API_KEY_HERE
+    depends_on:
+      - db
+  frontend:
+    build: nuxt-frontend/.
+    command: "npm run dev"
+    volumes:
+      - type: bind
+        source: ./nuxt-frontend/
+        target: /app/frontend/
+    ports: 
+      - "3001:3001"

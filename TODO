@@ -1,0 +1,5 @@
++ redirect after registration
++ loading state button to registration
++ hide admin page
++ remove id from card title 
++ change __str__ in pen model
